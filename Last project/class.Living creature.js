@@ -535,4 +535,3 @@ class Sponge {
 
 
 
-// let newCell= emptyCells[Math.floor(Math.random()*emptyCells.length)]
