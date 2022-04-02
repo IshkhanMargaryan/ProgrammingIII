@@ -1,0 +1,188 @@
+<html>
+
+<head>
+    <meta charset="utf8">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+	<table>
+		<tr id="first">
+			<td class="alice"></td>
+			<td class="alice">Գույն</td>
+			<td class="alice">Հիմնական ինֆորմացիա</td>
+			<td class="alice">Էներգիա</td>
+			<td class="alice">Բազմանալու մասին ինֆորմացիա</td>
+			<td class="alice">Էներգիայի մասին</td>
+			<td class="alice">Այլ հատկություններ</td>
+		</tr>
+		<tr>
+			<td id="white"></td>
+			<td>
+				<p>Սպիտակ</p>
+			</td>
+			<td>
+				<p>Այստեղ ոչինչ չկա</p>
+			</td>
+			<td>
+				<p>-</p>
+			</td>
+			<td>Չի բազմանում</td>
+			<td>
+				<p>Չունի energy</p>
+			</td>
+			<td>
+				<p>Չունի հատկություններ</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="green"></td>
+			<td>
+				<p>Կանաչ</p>
+			</td>
+			<td>
+				<p>Ուղակի խոտ</p>
+			</td>
+			<td>
+				<p>1</p>
+			</td>
+			<td>
+				<p>Բազմանում է ամեն մի 10-frame</p>
+			</td>
+			<td>
+				<p>Չունի energy</p>
+			</td>
+			<td>
+				<p>Ամեն տեղ բազմանում է </p>
+			</td>
+		</tr>
+
+		<tr>
+				<td id="purple"></td>
+				<td>
+					<p>Դեղին</p>
+				</td>
+				<td>
+					<p>Խոտակեր</p>
+				</td>
+				<td>
+					<p>2</p>
+				</td>
+				<td>
+					<p>Բազմանում է ամեն 25-frame</p>
+				</td>
+				<td>
+					<p>Մահանում է</p>
+				</td>
+				<td>
+					<p>Խոտ է ուտում</p>
+				</td>
+			</tr>
+	
+			<tr>
+					<td id="red"></td>
+					<td>
+						<p>Կարմիր</p>
+					</td>
+					<td>
+						<p>Գիշատիչ</p>
+					</td>
+					<td>
+						<p>3</p>
+					</td>
+					<td>
+						<p>Բազմանում է ամեն 15-frame</p>
+					</td>
+					<td>
+						<p>Մահանում է </p>
+					</td>
+					<td>
+						<p>Խոտակերին է ուտում</p>
+					</td>
+				</tr>
+			
+				<tr>
+						<td id="blueOther"></td>
+						<td>
+							<p>Կապույտ</p>
+						</td>
+						<td>
+							<p>Ջրի այլ տեսակ</p>
+						</td>
+						<td>
+							<p>4</p>
+						</td>
+						<td>
+							<p>Չի բազմանում</p>
+						</td>
+						<td>
+							<p>Փոխում է գույնը:Շարժվում է:</p>
+						</td>
+						<td>
+							<p>Փոխում է գույնը:Շարժվում է և դառնում ջրի վերջին տեսակը</p>
+						</td>
+					</tr>		
+	
+			
+		<tr>
+			<td id="Otherblue"></td>
+			<td>
+				<p>Կապույտ</p>
+			</td>
+			<td>
+				<p>Ուղակի ջուր</p>
+			</td>
+			<td>
+				<p>5</p>
+			</td>
+			<td>
+				<p>Չի բազմանում</p>
+			</td>
+			<td>
+				<p>Կանգնում:</p>
+			</td>
+			<td>
+				<p>Շարժվում է:Հետո կանգնում և դառնում է ջրի այլ տեսակ</p>
+			</td>
+		</tr>
+
+		
+
+		<tr>
+				<td id="blue"></td>
+				<td>
+					<p>Կապույտ</p>
+				</td>
+				<td>
+					<p>Ջրի այլ տեսակ</p>
+				</td>
+				<td>
+					<p>6</p>
+				</td>
+				<td>
+					<p>Փոխում է գույնը:Շարժվում է:</p>
+				</td>
+				<td>
+					<p>Չունի energy</p>
+				</td>
+				<td>
+					<p>Ամեն ինչ ներկում է կապույտ</p>
+				</td>
+			</tr>
+
+
+		
+
+		
+	</table>
+	<br>
+	<!-- <button onclick="kill()">Kill them all</button> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+	<!-- <script src="p5.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
