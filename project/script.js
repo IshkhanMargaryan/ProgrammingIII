@@ -2,33 +2,13 @@
 
     var socket = io();
 function setup() {
-    // matrix = matrixGenerator(20);
     frameRate(15);
     createCanvas(15 * side, 15 * side);
     background('#acacac');
 
-    // socket.on("send data", createObject);
-    // socket.on("send data", matrixGenerator);
 
 }
 
-// function seasons(){
-//                 if (matrix[y][x] == 1) {
-//                 if(weath=="winter"){
-//                     fill("#ffffff");
-//                 }
-//                 else if(weath=="spring"){
-//                     fill("#0be039");
-//                 }
-//                 else if(weath=="summer"){
-//                     fill("#157a35");
-//                 }
-//                 else if(weath=="autumn"){
-//                     fill("#e0670b");
-//                 }
-//                 rect(x * side, y * side, side, side);
-//             }
-// }
 
 
 
@@ -60,11 +40,6 @@ function drawn(matrix) {
                 }
                 rect(x * side, y * side, side, side);
             }
-
-            // if (matrix[y][x] == 1) {
-            //     fill("#157a35");
-            //     rect(x * side, y * side, side, side);
-            // }
             
             else if (matrix[y][x] == 0) {
                 fill("#acacac");
@@ -86,7 +61,19 @@ function drawn(matrix) {
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 3) {
-                fill("#b32222");
+                
+                if(weath=="winter"){
+                    fill("#b32222");
+                }
+                else if(weath=="spring"){
+                    fill("#fd0083");
+                }
+                else if(weath=="summer"){
+                    fill("#a1577d");
+                }
+                else if(weath=="autumn"){
+                    fill("#ab8498");
+                }
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 4) {
@@ -110,17 +97,7 @@ function drawn(matrix) {
     
 }
 
+function kill() {
+    socket.emit("kill")
+}
 
-
-// var express = require("express");
-// var app = express();
-
-// app.use(express.static("modules"));
-
-// app.get("/", function(req, res){
-//    res.redirect("index.html");
-// });
-
-// app.listen(3000, function(){
-//    console.log("Example is running on port 3000");
-// });

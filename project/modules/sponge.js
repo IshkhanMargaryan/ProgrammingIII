@@ -68,7 +68,6 @@ module.exports = class Sponge extends LivingCreature {
             this.energy--;
             if (this.energy <= 1) {
                 this.die();
-                console.log("death");
             }
         }
 

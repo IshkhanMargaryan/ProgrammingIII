@@ -72,7 +72,6 @@ module.exports = class waterBomb extends LivingCreature {
         var emptyCells=this.chooseCell(0).concat(this.chooseCell(1)).concat(this.chooseCell(2)).concat(this.chooseCell(3)).concat(this.chooseCell(6));
         var newGrass = emptyCells[Math.floor(Math.random()*emptyCells.length)];
         if (newGrass) {
-            console.log("everything is fine");
             var newx = newGrass[0];
             var newy = newGrass[1];
             matrix[this.y][this.x] = 0;
@@ -83,7 +82,6 @@ module.exports = class waterBomb extends LivingCreature {
         }
         if (this.timeToWater <= 0) {
             this.mul();
-            console.log("Water")
             matrix[newy][newx] = 6;
         }
         if (this.health <= 1) {

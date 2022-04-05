@@ -27,7 +27,6 @@ module.exports = class Predator extends LivingCreature {
     move() {
         //SOLVED
         var emptyCells=this.chooseCell(0).concat(this.chooseCell(1)).concat(this.chooseCell(2));
-        // var newCell = Math.floor(Math.random()*this.chooseCell(0).concat(this.chooseCell(1)).concat(this.chooseCell(2)));
         var newCell = emptyCells[Math.floor(Math.random()*emptyCells.length)];
         if (newCell) {
             var newx = newCell[0];
@@ -43,7 +42,6 @@ module.exports = class Predator extends LivingCreature {
             matrix[newy][newx] = 3;
             this.x = newx;
             this.y = newy;
-            console.log(this.multiply);
 
 
 

@@ -26,9 +26,6 @@ module.exports = class GrassEater extends LivingCreature {
     move() {
         //ERROR
         var emptyCells = this.chooseCell(0).concat(this.chooseCell(1))
-        // var emptyCells1=this.chooseCell(1);
-        // var newCell = emptyCells[Math.floor(Math.random()*emptyCells.length)].concat.emptyCells1[Math.floor(Math.random()*emptyCells1.length)];
-        // var newCell = emptyCells[Math.floor(Math.random()*emptyCells.length)].concat(emptyCells1[Math.floor(Math.random()*emptyCells1.length)]);
         var newCell = emptyCells[Math.floor(Math.random()*emptyCells.length)];
         if (newCell) {
             var newx = newCell[0];
@@ -37,7 +34,6 @@ module.exports = class GrassEater extends LivingCreature {
             matrix[newy][newx] = 2;
             this.x = newx;
             this.y = newy;
-            console.log(this.multiply);
         }
 
     }

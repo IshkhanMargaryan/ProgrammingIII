@@ -26,11 +26,9 @@ spongeArr = [];
 matrix = [];
 //CHANGING RANDOM EVERYWHERE
 function matrixGenerator(l) {
-    // var m = [];
     for (var i = 0; i < l; i++) {
         matrix[i] = [];
         for (var j = 0; j < l; j++) {
-            // var rand = Math.floor(Math.random(0,100));
             var rand = Math.floor(Math.random() * (100 - 0) + 0);
             if (rand <= 30) {
                 matrix[i][j] = 1;
@@ -54,7 +52,7 @@ function matrixGenerator(l) {
 }
 
 matrixGenerator(50);
-// io.sockets.emit("send matrix",matrix);
+
 
 function weather() {
     if (weath == "winter") {
@@ -108,25 +106,18 @@ function createObject() {
 }
 io.sockets.emit("send matrix", matrix);
 function game() {
-    //grass
     for (var i in grassArr) {
         grassArr[i].mul();
     }
-    //predator
     for (var i in PredatorArr) {
         PredatorArr[i].eat();
-        // PredatorArr[i].die();
-        // PredatorArr[i].move();
-        // PredatorArr[i].mul();
     }
-    //grassEater
+
     for (var i in grassEaterArr) {
         grassEaterArr[i].eat();
-        // grassEaterArr[i].die();
-        // grassEaterArr[i].move();
-        // grassEaterArr[i].mul();
+
     }
-    //waterBomb
+
     for (var i in WaterBombArr) {
         WaterBombArr[i].move();
     }
@@ -137,6 +128,42 @@ function game() {
 }
 setInterval(game, 1000);
 
+
+function kill() {
+    waterArr = [];
+    grassArr = [];
+    grassEaterArr = [];
+    PredatorArr = [];
+    WaterBombArr = [];
+    spongeArr = [];
+    for (var y = 0; y < matrix.length; y++) {
+        for (var x = 0; x < matrix[y].length; x++) {
+            matrix[y][x] = 0;
+        }
+    }
+}
+
+
+
+
+
 io.on('connection', function (socket) {
     createObject();
+    socket.on("kill", kill);
+
 });
+
+var fs= require('fs');
+var statistics = {};
+
+setInterval(function () {
+    statistics.grass = grassArr.length;
+    statistics.grassEater = grassEaterArr.length;
+    statistics.Predator = PredatorArr.length;
+    statistics.water = waterArr.length;
+    statistics.waterBomb = WaterBombArr.length;
+    statistics.sponge = spongeArr.length;
+    fs.writeFile("statistics.json", JSON.stringify(statistics), function () {
+    })
+}, 1000)
+
